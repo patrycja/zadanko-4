@@ -1,0 +1,33 @@
+<%- if user_signed_in? %>
+Jestes zalogowany jako:
+<b><%= current_user.email %></b>
+
+<% if @products.blank? %>
+<p>Nie mamy zadnych zapisanych przedmiotow</p>
+<% else %>
+<p>W systemie sa zapisane nastepujace przedmioty</p>
+<ul id="products">
+<% @products.each do |c| %>
+
+<li>
+<%= link_to c.name, {:action => "show", :id => c.id} -%>
+<b> <%= link_to "Edytuj",  {:action => "edit", :id => c.id} %></b>
+</li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to "Dodaj nowa pozycje", {:action => 'new' }%></p>
+<%- if current_user.admin? %>
+<p><%= link_to "Jestem adminem, poka panel", admin_products_path %></p>
+<%- end %>
+<p><%= link_to "Wyloguj sie", destroy_user_session_path %></p>
+
+<%- else %>
+Musisz sie zalogowac, by moc ogladac zawartosc tej jakze ciekawej strony.
+<p><%= link_to "Zaloguj sie", new_user_session_path %></p>
+<p><%= link_to "Zarejestruj sie", new_user_registration_path %></p>
+
+logowanie jako <b>admin</b>
+<br><b>e-mail:</b> im@admin.com
+<br><b>pass:</b> adminpass
+<%- end%>

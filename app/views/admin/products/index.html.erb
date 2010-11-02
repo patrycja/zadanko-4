@@ -1,0 +1,20 @@
+PANEL ADMINA
+
+<% if @products.blank? %>
+<p>Nie mamy zadnych zapisanych przedmiotow</p>
+<% else %>
+<p>W systemie sa zapisane nastepujace przedmioty</p>
+<ul id="products">
+<% @products.each do |c| %>
+
+<li>
+<%= link_to c.name, {:action => "show", :id => c.id} -%>
+<b> <%= link_to "Edytuj",  {:action => "edit", :id => c.id} %></b>
+<b> <%= link_to "Usun", {:action => "destroy", :id => c.id},
+:confirm => "Czy na pewno chcesz usunac te pozycje?", :method => :delete%></b>
+</li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to "Dodaj nowa kategorie", {:action => 'new', :controller => 'categories'} %></p>
+<p><%= link_to "Powrot", products_path %></p>

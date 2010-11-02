@@ -1,0 +1,7 @@
+<h1>Dodaj nowa kategorie</h1>
+<%- form_for @category do |f|%>
+<p><label for="category_name">Nazwa</label>:
+<%= f.text_field 'name' %></p>
+<%= f.submit "Stworz" %>
+<%- end %><p />
+<%= link_to '(Klik, klik) Powrot', admin_products_path %>

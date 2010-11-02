@@ -9,7 +9,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
 
       t.timestamps
     end
-   Admin.create :email => 'im@admin.com', :password => 'adminpass', :password_confirmation => 'adminpass'
+   Admin.create! :email => 'im@admin.com', :password => 'adminpass', :password_confirmation => 'adminpass'
   end
 
   def self.down

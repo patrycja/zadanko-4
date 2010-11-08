@@ -42,6 +42,11 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
+    meta_search (0.9.8)
+      actionpack (~> 3.0.0)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 1.0.1)
     mime-types (1.16)
     pg (0.9.0-x86-mingw32)
     polyglot (0.3.1)
@@ -70,11 +75,14 @@ GEM
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
   devise
+  meta_search
   pg
   rails (= 3.0.0)
+  will_paginate (~> 3.0.pre2)

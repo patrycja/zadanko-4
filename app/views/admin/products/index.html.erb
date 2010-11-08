@@ -1,9 +1,17 @@
 PANEL ADMINA
 
+ <%- form_for :search, @search, :html => {:method => :get} do |f| %>
+    <%= f.label :name_contains %>
+    <%= f.text_field :name_contains %><br />
+    <%= f.submit "Szukaj" %>
+  <%- end %>
+
 <% if @products.blank? %>
 <p>Nie mamy zadnych zapisanych przedmiotow</p>
 <% else %>
 <p>W systemie sa zapisane nastepujace przedmioty</p>
+<%= will_paginate @products %>
+
 <ul id="products">
 <% @products.each do |c| %>
 
@@ -16,5 +24,7 @@ PANEL ADMINA
 <% end %>
 </ul>
 <% end %>
+<%= will_paginate @products %>
+
 <p><%= link_to "Dodaj nowa kategorie", {:action => 'new', :controller => 'categories'} %></p>
 <p><%= link_to "Powrot", products_path %></p>

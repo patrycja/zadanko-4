@@ -7,6 +7,8 @@ gem 'rails', '3.0.0'
 
 gem 'pg'
 gem 'devise'
+gem "meta_search"
+gem "will_paginate", "~> 3.0.pre2"
 
 # Use unicorn as the web server
 # gem 'unicorn'

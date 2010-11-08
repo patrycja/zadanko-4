@@ -1,7 +1,10 @@
 class Admin::ProductsController < ApplicationController
 before_filter :authenticate_user!
+attr_reader :per_page
+
 def index
-  @products = Product.find(:all)
+  @search = Product.search(params[:search])
+  @products = @search.paginate(:page => params[:page], :per_page => 5)
   end
  def show
   @product = Product.find(params[:id])

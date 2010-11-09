@@ -124,6 +124,7 @@ DEPENDENCIES
   capybara
   devise
   meta_search
+  nokogiri
   pg
   rails (= 3.0.0)
   rspec-rails (~> 2.0.1)

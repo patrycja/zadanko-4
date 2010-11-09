@@ -9,12 +9,6 @@ gem 'pg'
 gem 'devise'
 gem "meta_search"
 gem "will_paginate", "~> 3.0.pre2"
-gem 'capybara'
-
-group :test, :development do
-  gem "rspec-rails", "~> 2.0.1"
-  gem "autotest"
-end
 
 
 # Use unicorn as the web server
@@ -28,7 +22,7 @@ end
 
 # Bundle the extra gems:
 # gem 'bj'
- gem 'nokogiri'
+# gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 

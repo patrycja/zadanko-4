@@ -1,0 +1,5 @@
+ <%- form_for :search, @search, :html => {:method => :get} do |f| %>
+    <%= f.label :name_contains %>
+    <%= f.text_field :name_contains %><br />
+    <%= f.submit "Szukaj" %>
+  <%- end %>

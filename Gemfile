@@ -9,9 +9,13 @@ gem 'pg'
 gem 'devise'
 gem "meta_search"
 gem "will_paginate", "~> 3.0.pre2"
-gem 'rspec'
 gem 'capybara'
-gem "autotest"
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0.1"
+  gem "autotest"
+end
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

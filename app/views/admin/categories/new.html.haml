@@ -1,0 +1,9 @@
+%h1 Dodaj nowa kategorie
+- form_for @category do |f|
+  %p
+    %label{:for => "category_name"}> Nazwa
+    \:
+    \#{f.text_field 'name'}
+  = f.submit "Stworz"
+%p
+  = link_to '(Klik, klik) Powrot', admin_products_path

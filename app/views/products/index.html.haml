@@ -1,0 +1,41 @@
+- if user_signed_in?
+  Jestes zalogowany jako:
+  %b= current_user.email
+  = render 'form2'
+  - if @products.blank?
+    %p Nie mamy zadnych zapisanych przedmiotow
+  - else
+    %p W systemie sa zapisane nastepujace przedmioty
+    = will_paginate @products
+    %ul#products
+      - @products.each do |c|
+        %li
+          = link_to c.name, {:action => "show", :id => c.id}
+          %b
+            = link_to "Edytuj",  {:action => "edit", :id => c.id}
+  = will_paginate @products
+  %p= link_to "Dodaj nowa pozycje", {:action => 'new' }
+  - if current_user.admin?
+    %p= link_to "Jestem adminem, poka panel", admin_products_path
+  %p= link_to "Wyloguj sie", destroy_user_session_path
+- else
+  Musisz sie zalogowac, by moc ogladac zawartosc tej jakze ciekawej strony.
+  %p= link_to "Zaloguj sie", new_user_session_path
+  %p= link_to "Zarejestruj sie", new_user_registration_path
+  logowanie jako
+  %b zwykly uzytkownik
+  %br/
+  %b e-mail:
+  ja@from.pl
+  %br/
+  %b pass:
+  qwerty
+  %br/
+  logowanie jako
+  %b admin
+  %br/
+  %b e-mail:
+  im@admin.com
+  %br/
+  %b pass:
+  adminpass

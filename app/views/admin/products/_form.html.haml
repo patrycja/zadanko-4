@@ -1,0 +1,19 @@
+- form_for @product do |f|
+  = f.error_messages
+  %p
+    %label{:for => "product_name"}> Nazwa
+    \:
+    \#{f.text_field 'name'}
+  %p
+    %label{:for => "product_price"}> Cena
+    \:
+    \#{f.text_field 'price'}
+  %p
+    %label{:for => "product_category"}> Kategoria
+    \:
+    \#{f.collection_select(:category_id, @categories, :id, :name)}
+  %p
+    %label{:for => "product_description"} Krotki opis
+    %br/
+    = f.text_area 'description'
+  = f.submit "Zapisz zmiany"

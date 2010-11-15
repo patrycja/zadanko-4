@@ -1,0 +1,12 @@
+%h1= @product.name
+%p
+  %strong Cena:
+  = @product.price
+  zl
+  %br/
+  %strong Kategoria:
+  = @product.category.name
+  %br/
+%p= @product.description
+%hr/
+= link_to '(Klik, klik) Powrot', products_path

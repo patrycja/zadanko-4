@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.1)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    autotest (4.4.2)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
     capybara (0.4.0)
@@ -129,6 +130,7 @@ GEM
     warden (0.10.7)
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
+    win32console (1.3.0-x86-mingw32)
     xpath (0.1.2)
       nokogiri (~> 1.3)
 
@@ -136,6 +138,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  autotest
   capybara
   cucumber
   cucumber-rails
@@ -145,5 +148,7 @@ DEPENDENCIES
   meta_search
   pg
   rails (= 3.0.1)
+  rspec
   rspec-rails
   will_paginate (~> 3.0.pre2)
+  win32console

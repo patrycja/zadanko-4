@@ -16,7 +16,7 @@ end
  def create
       @product = Product.new(params[:product])
       if @product.save
-            redirect_to :action => 'index', :notice => 'produkt dodany'
+            redirect_to products_path
       else
             @categories = Category.find(:all)
             render :action => 'new'

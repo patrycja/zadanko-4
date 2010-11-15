@@ -13,7 +13,7 @@ gem 'cucumber'
 gem 'cucumber-rails'
 gem 'launchy'
 gem 'haml'
-
+gem 'win32console'
 
 
 
@@ -39,4 +39,6 @@ gem 'haml'
 group :development, :test do
    gem 'capybara'
    gem 'rspec-rails'
+   gem 'rspec'
+   gem 'autotest'
  end

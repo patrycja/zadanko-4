@@ -37,7 +37,7 @@ describe ProductsController, "POST create" do
     end
 	
   
-    it "should redirect to the messages index" do
+    it "should redirect to the products index" do
        post :create
        response.should redirect_to(products_path)
     end
@@ -50,7 +50,7 @@ describe ProductsController, "POST create" do
 	
     it "should render the new template" do
 	   post :create
-       response.should render_template("new" )
+       response.should render_template("new")
 	end
   end
 end

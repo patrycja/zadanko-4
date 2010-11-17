@@ -1,9 +1,11 @@
 require 'spec_helper'
 
-describe ProductsController, "POST create" do 
+describe ProductsController do 
   fixtures :products
   fixtures :users
   include Devise::TestHelpers
+  
+  describe "POST 'create'" do
   
   def mock_user(stubs={})
       @mock_user ||= mock_model(User, stubs).as_null_object
@@ -54,3 +56,5 @@ describe ProductsController, "POST create" do
 	end
   end
 end
+
+end  

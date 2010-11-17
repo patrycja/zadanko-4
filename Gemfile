@@ -14,6 +14,8 @@ gem 'cucumber-rails'
 gem 'launchy'
 gem 'haml'
 gem 'win32console'
+gem 'factory_girl'
+gem 'pickle'
 
 
 
